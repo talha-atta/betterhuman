@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Betterhuman",
+  "description": "Shows you how long your email will take to read, inspired by Medium's read time counter.",
+  "version": "1.0",
+  "icons": {"128": "icon.png"},
+  "permissions": [
+    "https://mail.google.com/",
+    "https://inbox.google.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*",
+        "https://inbox.google.com/*"
+      ],
+      "js": ["inboxsdk.js","app.js", "jquery.js"],
+      "css": ["style.css"],
+      "run_at": "document_end"
+    }
+  ]
+}
+
